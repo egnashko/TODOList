@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>TODO List</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--libraries css-->
+    <link href="lib/scrollbar/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="lib/wow/animate.css" rel="stylesheet">
+    <!--common links-->
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!--preloader-->
+<style type="text/css">#hellopreloader>p{display:none;}#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;min-width: 100px;background: #336E7B url(http://hello-site.ru//main/images/preloads/ball-triangle.svg) center center no-repeat;background-size:41px;}</style>
+<div id="hellopreloader"><div id="hellopreloader_preload"></div><p><a href="http://hello-site.ru">Hello-Site.ru. Бесплатный конструктор сайтов.</a></p></div>
+<script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},100);};</script>
+
+<!--CODE HERE-->
+<section ng-app="myApp" ng-controller="myCtrl">
+    <div class="left_panel wow fadeInLeft">
+        <div class="headline">
+            <h1>Choose your list</h1>
+        </div>
+        <div class="list_name">
+            <p>Comon list</p>
+        </div>
+    </div>
+    <div class="the_content wow fadeInRight">
+        <div class="headline">
+            <h3>TODO LIST</h3>
+        </div>
+        <div class="block_to_add">
+            <input type="text" placeholder="task name ..." ng-model="addName">
+            <button ng-click="addItem()">Create</button>
+        </div>
+        <div class="list_of_tasks">
+            <div class="sort_btns">
+                <button ng-click="sortFuhc('number')">Sort my number</button><button ng-click="sortFuhc('name')">Sort alphabetic</button>
+            </div>
+            <div class="inner_block mCustomScrollbar" data-mcs-theme="dark">
+                <ul>
+                    <li class="list_item" ng-repeat="item in itemList | orderBy:myOrderBy">
+                        <span class="item_count">{{item.number + "."}}</span>
+                        <span class="item_info">{{item.name}}</span>
+                        <button ng-click="removeItem()">Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--CODE HERE-->
+
+
+
+<!--libraries js-->
+<script src="lib/angular/angular.js"></script>
+<script src="js/angularModule.js"></script>
+<script src="js/angularController.js"></script>
+<script src="lib/jquery/jquery-2.2.4.min.js"></script>
+<script src="lib/scrollbar/jquery.mCustomScrollbar.min.js"></script>
+<script src="lib/wow/wow.js"></script>
+<!--common js-->
+<script src="js/common.js"></script>
+
+</body>
+</html>

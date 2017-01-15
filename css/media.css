@@ -1,0 +1,56 @@
+@media (max-width: 800px) {
+    .left_panel {
+        display: block;
+        min-height: 115px;
+        height: unset;
+        width: 100%;
+    }
+    .left_panel .headline {
+        padding: 5px 0;
+    }
+    .the_content {
+        width: 100%;
+    }
+    .list_item button {
+        display: block;
+        float: none;
+        margin: 10px auto 0;
+    }
+    .list_item .item_count, .list_item .item_info {
+        max-width: unset;
+    }
+    .list_item .item_count {
+        width: 15%;
+    }
+    .list_item .item_info {
+        width: 82%;
+    }
+}
+
+@media (max-width: 520px) {
+    .left_panel {
+        display: block;
+        min-height: 115px;
+        height: unset;
+        width: 100%;
+    }
+    .left_panel .headline {
+        padding: 5px 0;
+    }
+    .the_content {
+        width: 100%;
+        min-width: unset;
+    }
+    .block_to_add button, .sort_btns>button {
+        display: block;
+        float: none;
+        margin: 10px auto 0;
+        width: 150px;
+    }
+    .list_of_tasks {
+        height: 395px;
+    }
+    .block_to_add input {
+        width:100%;
+    }
+}
