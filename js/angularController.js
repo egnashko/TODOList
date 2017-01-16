@@ -19,6 +19,10 @@ myApp.controller("myCtrl", function ($scope) {
     };
     $scope.removeItem = function (item) {
         $scope.itemList.splice(item, 1);
+        for(var i = 0; i<$scope.itemList.length; i++)
+        {
+            $scope.itemList[i].number = i+1;
+        }
     };
     $scope.sortFuhc = function (sortIt) {
         $scope.myOrderBy = sortIt;
